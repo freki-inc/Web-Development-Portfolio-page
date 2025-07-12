@@ -37,8 +37,8 @@
 :root {
     /* Colors */
     --color-primary: #007bff;
-    --color-secondary: #2847E0;
-    --color-accent: #4528E0;
+    --color-secondary: #002BFF;
+    --color-accent: #55A7FF;
     --color-success: #28a745;
     --color-warning: #ffc107;
     --color-danger: #dc3545;
@@ -119,6 +119,7 @@
 /* === Body Configs === */
 
 body {
+    position: relative;
     background-color: var(--gray-100);
 }
 
@@ -126,16 +127,15 @@ body {
 
 h1 {
     font-family: var(--font-heading);
-    font-size: 55px;
+    font-size: 53px;
     line-height: 1.5;
     color: var(--gray-900);
     text-shadow: var(--shadow-lg);
-    text-align: center;
 }
 
 h2 {
     font-family: var(--font-heading);
-    font-size: 38px;
+    font-size: 40px;
     line-height: 1.5;
     color: var(--gray-900);
     text-shadow: var(--shadow-md);
@@ -146,28 +146,39 @@ h3 {
     font-size: 28px;
     line-height: 1.5;
     color: var(--gray-900);
-    text-shadow: var(--shadow-sm);
+    text-shadow: var(--shadow-md);
 }
 
 p {
+    font-family: var(--font-base);
     font-size: 16px;
-    font-weight: 500;
     margin: 15px 0 30px;
-    text-shadow: var(--text-shadow);
+    text-shadow: var(--shadow-sm);
 }
 
 /* === Main content configs === */
 
+main {
+    position: absolute;
+    top: 90px;
+}
+
 section {
-    margin: 5rem 10%;
+    margin: 0 10%;
+}
+
+hr {
+    border: none;
+    border-bottom: 2px solid var(--color-accent);
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
 }
 
 /* Header and Navbar */
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
     display: flex;
     width: 100%;
     height: 10vh;
@@ -185,7 +196,7 @@ header {
 }
 
 .logo:hover {
-    color: var(--color-accent);
+    color: var(--color-secondary);
 }
 
 header ul {
@@ -213,7 +224,7 @@ header ul {
 /* Hover Configs - Navbar Section */
 
 .navbar a:hover {
-    color: var(--color-accent);
+    color: var(--color-secondary);
     text-shadow: var(--text-shadow);
 }
 
@@ -222,40 +233,44 @@ header ul {
 /* Hero Configs */
 
 .hero-section {
-    height: 100vh;
+    height: 720px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: 1rem;
 
     h1 {
         margin-top: 3rem;
-        grid-area: 1 / 1 / 1 / 13;
+        grid-area: 1 / 2 / 1 / 13;
     }
 }
 
 .hero-content {
-    grid-area: 4 / 2 / 4 / 7;
+    padding-top: 2rem;
+    grid-area: 2 / 2 / 4 / 7;
 }
 
 .hero-img {
-    grid-area: 2 / 8 / 13 / 13;
-    max-width: 70%;
+    grid-area: 2 / 8 / 4 / 13;
+    max-width: 60%;
     height: auto;
+    margin-left: 10%;
+    border: 2px solid var(--color-accent)
 }
 
 /* Contact Quicklinks Configs */
 
 .contact-quicklinks {
+    padding-top: 18rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    grid-area: 6 / 1 / 6 / 7;
+    grid-area: 4 / 2 / 5 / 7;
 }
 
 .quicklinks {
-    width: 20%;
+    width: 30%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -303,20 +318,49 @@ header ul {
 /*  Hover Configs - Contact Logos */
 
 .contact-logo:hover, .email-btn:hover {
-    background-color: var(--color-accent);
+    background-color: var(--color-secondary);
 }
 
 /* === Projects Section Configs === */
+
+.projects-section {
+    height: 720px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1rem;
+
+    h2 {
+        margin-top: 3rem;
+        grid-area: 1 / 2 / 1 / 13;
+    }
+}
+
+.projects-grid {
+    display: flex;
+    grid-area: 2 / 2 / 5 / 13;
+}
+
+.projects-grid a {
+    margin: 1rem;
+    width: 300px;
+    height: 230px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.projects-grid img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
 /* Footer */
 
 .footer {
     display: flex;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    padding-right: 10%;
-    z-index: 1;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer a {
