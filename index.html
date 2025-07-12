@@ -1,36 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Project Title</title>
-
-  <!-- Favicon (optional) -->
-  <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Meta tags for SEO (optional) -->
-  <meta name="description" content="Brief description of your webpage">
-  <meta name="keywords" content="HTML, CSS, JavaScript">
-  <meta name="author" content="Your Name">
-</head>
-<body>
-  <header>
-    <h1>Welcome to My Project</h1>
-  </header>
-
-  <main>
-    <p>Hello, world!</p>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Your Name</p>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willem Web Developer</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#home"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5"><path fill-rule="evenodd" d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clip-rule="evenodd" /></svg></a></li>
+          <li><a href="#projects">My Projects</a></li>
+          <li><a href="#resume">Resumé & Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="home" class="hero-section">
+        <div class="hero-content">
+          <h1>Willem Savio Freeke - Front-End Engineer</h1>
+          <h2>Welcome to my portfolio!</h2>
+          <p>My developer toolkit includes HTML, CSS, JavaScript, React and several more!</p> 
+          <p>Using these tools, I specialize in crafting beautiful, responsive, and interactive websites and applications. My goal is to blend design, accessibility and functionality to create digital experiences that delight users.</p>
+          <p>Get to know who I am, explore my work and discover my skills. Let's connect to build something incredible together!</p>
+          <h3>Contact Quicklinks</h3>
+          <a class="contact-logo" href="https://www.x.com/willemwebdev" target="_blank"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve" fill="currentColor"><g><polygon points="12.153992,10.729553 8.088684,5.041199 5.92041,5.041199 10.956299,12.087097 11.59021,12.97345    15.900635,19.009583 18.068909,19.009583 12.785217,11.615906  "/><path d="M21.15979,1H2.84021C1.823853,1,1,1.823853,1,2.84021v18.31958C1,22.176147,1.823853,23,2.84021,23h18.31958   C22.176147,23,23,22.176147,23,21.15979V2.84021C23,1.823853,22.176147,1,21.15979,1z M15.235352,20l-4.362549-6.213013   L5.411438,20H4l6.246887-7.104675L4,4h4.764648l4.130127,5.881958L18.06958,4h1.411377l-5.95697,6.775635L20,20H15.235352z"/></g></svg></a>
+          <a class="contact-logo" href="#contact"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" /><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" /></svg></a>
+        </div>
+      </section>
+      <section id="projects" class="projects-section">
+        <div>
+          <h2>Projects</h2>
+          <a href="#"><img src="" alt=""></a>
+          <a href="#"><img src="" alt=""></a>
+          <a href="#"><img src="" alt=""></a>
+          <a href="#"><img src="" alt=""></a>
+        </div>
+      </section>
+      <section id="resume" class="resume-section">
+        <div class="resume-section">
+          <h2>Resumé</h2>
+        </div>
+        <div class="education-section">
+          <h2>Education</h2>
+          <img src="" alt="">
+          <img src="" alt="">
+          <img src="" alt="">
+          <img src="" alt="">
+          <img src="" alt="">
+          <img src="" alt="">
+        </div>
+      </section>
+      <section id="contact" class="contact-section">
+        <div>
+          <h2>Contact</h2>
+          <form action="" role="">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="20" cols="80" placeholder="Type your message here..." required></textarea>
+            <input type="submit" value="Send Message">
+          </form>
+        </div>
+      </section>
+      <footer class="footer">
+        <a href="https://www.termsfeed.com/blog/sample-user-agreement-template/" target="_blank"><p>Privacy Policy</p></a>
+        <p>Copyright © 2025 willemwebdev</p>
+      </footer>
+    </main>
+  </body>
 </html>
