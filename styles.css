@@ -478,6 +478,36 @@ header ul {
     background-color: var(--color-secondary);
 }
 
+/* === Thank you Form Confirmation === */
+
+.thankyou {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    a {
+        font-family: var(--font-base);
+        font-size: 20px;
+        color: var(--color-primary);
+        text-decoration: none;
+        margin-top: 2rem;
+        transition: color 0.4s;
+    }
+
+    a:hover {
+        color: var(--color-secondary);
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: var(--radius-circle);
+        border: 2px solid var(--color-accent);
+    }
+}
+
 /* === Footer === */
 
 .footer {
