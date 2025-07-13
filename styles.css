@@ -63,6 +63,7 @@
     --font-size-h1: 3.3rem;
     --font-size-h2: 2.5rem;
     --font-size-h3: 1.8rem;
+    --font-size-xs: 0.7rem;
     --font-size-sm: 0.875rem;
     --font-size-lg: 1.15rem;
     --line-height-base: 1.5;
@@ -434,7 +435,7 @@ header ul {
     text-shadow: var(--shadow-sm);
 }
 
-.contact-grid form input {
+.contact-grid-input {
     width: 50%;
     padding: var(--space-sm) var(--space-sm);
     margin-bottom: var(--space-sm);
@@ -443,9 +444,23 @@ header ul {
 
 .contact-grid form textarea {
     padding: var(--space-sm) var(--space-sm);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
     border-radius: var(--radius-sm);
     font-size: var(--font-size-sm);
+}
+
+.consent-wrapper {
+    display: flex;
+}
+
+.consent-label {
+    font-size: var(--font-size-xs);
+    height: 2rem;
+}
+
+.consent-checkbox {
+    width: 10%;
+    height: 10%
 }
 
 .submit {
