@@ -60,10 +60,13 @@
     --font-base:'Inter', 'Helvetica Neue', 'Segoe UI', 'Roboto', sans-serif;
     --font-heading: 'Righteous', 'Arial Black', 'Impact', sans-serif;
     --font-size-base: 16px;
+    --font-size-h1: 3.3rem;
+    --font-size-h2: 2.5rem;
+    --font-size-h3: 1.8rem;
     --font-size-sm: 0.875rem;
-    --font-size-lg: 1.25rem;
+    --font-size-lg: 1.15rem;
     --line-height-base: 1.5;
-    --line-height-heading: 1.2;
+    --line-height-heading: 1.8;
 
     /* Spacing */
     --space-xs: 0.25rem;
@@ -131,31 +134,32 @@ a:visited {
 
 h1 {
     font-family: var(--font-heading);
-    font-size: 53px;
-    line-height: 1.5;
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-heading);
     color: var(--gray-900);
     text-shadow: var(--shadow-lg);
 }
 
 h2 {
     font-family: var(--font-heading);
-    font-size: 40px;
-    line-height: 1.5;
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-heading);
     color: var(--gray-900);
     text-shadow: var(--shadow-md);
 }
 
 h3 {
     font-family: var(--font-heading);
-    font-size: 28px;
-    line-height: 1.5;
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-heading);
     color: var(--gray-900);
     text-shadow: var(--shadow-md);
 }
 
 p {
     font-family: var(--font-base);
-    font-size: 16px;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
     margin: 15px 0 30px;
     text-shadow: var(--shadow-sm);
 }
@@ -235,12 +239,13 @@ header ul {
     height: 720px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: 1fr 50px repeat(5, 1fr);
     gap: 1rem;
 
     h1 {
-        margin-top: 3rem;
+        margin-top: var(--space-lg);
         grid-area: 1 / 2 / 1 / 13;
+        align-content: center;
     }
 }
 
@@ -326,25 +331,30 @@ header ul {
     height: 720px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: 1fr 50px repeat(5, 1fr);
     gap: 1rem;
 
     h2 {
-        margin-top: 3rem;
-        grid-area: 1 / 2 / 1 / 13;
+        margin-top: var(--space-lg);
+        grid-area: 1 / 2 / 1 / 12;
+        align-content: center;
+    }
+
+    h3 {
+        grid-area: 2 / 2 / 3 / 12;
     }
 }
 
 .projects-grid {
     display: flex;
-    grid-area: 2 / 2 / 5 / 13;
+    grid-area: 4 / 2 / 5 / 13;
 }
 
 .projects-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
 }
 
@@ -376,6 +386,81 @@ header ul {
 .projects-grid img:hover {
     transform: scale(1.05);
     transition: transform 0.2s ease-in-out;
+}
+
+/* === Contact Section Configs === */
+
+.contact-section {
+    height: 720px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr 50px repeat(5, 1fr);
+    gap: 1rem;
+
+    h2 {
+        margin-top: var(--space-lg);
+        grid-area: 1 / 2 / 1 / 12;
+        align-content: center;
+    }
+
+    img {
+        grid-area: 2 / 7 / 5 / 12;
+        max-width: 65%;
+        height: auto;
+        margin-left: 30%;
+        border: 2px solid var(--color-accent)
+    }
+}
+.contact-links {
+    width: 50%;
+    display: flex;
+    grid-area: 2 / 2 / 2 / 7;
+}
+
+.contact-links a {
+    margin-right: var(--space-md);
+}
+
+.contact-grid {
+    grid-area: 3 / 2 / 5 / 7;
+}
+
+.contact-grid form {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-base);
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-base);
+    text-shadow: var(--shadow-sm);
+}
+
+.contact-grid form input {
+    width: 50%;
+    padding: var(--space-sm) var(--space-sm);
+    margin-bottom: var(--space-sm);
+    border-radius: var(--radius-sm);
+}
+
+.contact-grid form textarea {
+    padding: var(--space-sm) var(--space-sm);
+    margin-bottom: var(--space-lg);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+}
+
+.submit {
+    font-size: var(--font-size-lg);
+    margin: 0 auto;
+    padding: var(--space-md) var(--space-md);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: var(--color-secondary);
 }
 
 /* === Footer === */
