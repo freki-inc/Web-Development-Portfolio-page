@@ -458,6 +458,11 @@ header ul {
     height: 2rem;
 }
 
+.consent-label a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
 .consent-checkbox {
     width: 10%;
     height: 10%
@@ -490,6 +495,37 @@ header ul {
     margin-right: 2rem;
     text-shadow: var(--text-shadow);
 }
+
+/* === Thank you Form Confirmation === */
+
+.thankyou {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    a {
+        font-family: var(--font-base);
+        font-size: 20px;
+        color: var(--color-primary);
+        text-decoration: none;
+        margin-top: 2rem;
+        transition: color 0.4s;
+    }
+
+    a:hover {
+        color: var(--color-secondary);
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: var(--radius-circle);
+        border: 2px solid var(--color-accent);
+    }
+}
+
 
 /* === Media Queries === */
 

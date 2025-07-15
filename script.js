@@ -1,38 +1,21 @@
 // ============================
-// JavaScript Boilerplate
+// JavaScript Code
 // ============================
 
-// Wait until the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed');
-  
-    // Initialize app
-    initApp();
+// Function to sanitize input fields
+  function sanitizeInput(str) {
+    return str.replace(/<[^>]*>?/gm, '')
+              .replace(/&/g, "&amp;")
+              .replace(/"/g, "&quot;")
+              .replace(/'/g, "&#x27;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;");
+  }
+// Event listener to the contact form and sanitize inputs on submit
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    const form = e.target;
+    form.name.value = sanitizeInput(form.name.value);
+    form.email.value = sanitizeInput(form.email.value);
+    form.subject.value = sanitizeInput(form.subject.value);
+    form.message.value = sanitizeInput(form.message.value);
   });
-  
-  // ========== App Initialization ==========
-  function initApp() {
-    // Example: Attach events, fetch data, etc.
-    setupEventListeners();
-    // fetchData(); // Example function if you plan to use APIs
-  }
-  
-  // ========== Event Listeners ==========
-  function setupEventListeners() {
-    const button = document.getElementById('myButton');
-  
-    if (button) {
-      button.addEventListener('click', () => {
-        alert('Button clicked!');
-      });
-    }
-  }
-  
-  // ========== Example Utility Function ==========
-  function greetUser(name = 'Guest') {
-    console.log(`Hello, ${name}!`);
-  }
-  
-  // Uncomment to test
-  // greetUser('Jane');
-  
