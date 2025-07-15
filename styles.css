@@ -61,8 +61,17 @@
     --font-heading: 'Righteous', 'Arial Black', 'Impact', sans-serif;
     --font-size-base: 16px;
     --font-size-h1: 3.3rem;
+    --font-size-h1-m: 3rem;
+    --font-size-h1-s: 2.5rem;
+    --font-size-h1-xs: 2rem;
     --font-size-h2: 2.5rem;
-    --font-size-h3: 1.8rem;
+    --font-size-h2-m: 2.2rem;
+    --font-size-h2-s: 2rem;
+    --font-size-h2-xs: 1.6rem;
+    --font-size-h3: 1.7rem;
+    --font-size-h3-small: 1.5rem;
+    --font-size-nav-a: 1.375rem;
+    --font-size-nav-a-small: 1rem;
     --font-size-xs: 0.7rem;
     --font-size-sm: 0.875rem;
     --font-size-lg: 1.15rem;
@@ -87,15 +96,6 @@
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
-
-    /* Z-index */
-    --z-dropdown: 1000;
-    --z-sticky: 1020;
-    --z-fixed: 1030;
-    --z-modal-backdrop: 1040;
-    --z-modal: 1050;
-    --z-popover: 1060;
-    --z-tooltip: 1070;
 
     /* Transitions */
     --transition-fast: 0.2s ease-in-out;
@@ -136,17 +136,53 @@ a:visited {
 h1 {
     font-family: var(--font-heading);
     font-size: var(--font-size-h1);
-    line-height: var(--line-height-heading);
+    line-height: var(--line-height-base);
     color: var(--gray-900);
     text-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 780px) {
+    h1 {
+        font-size: var(--font-size-h1-m);
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: var(--font-size-h1-s);
+    }
+}
+
+@media (max-width: 520px) {
+    h1 {
+        font-size:  var(--font-size-h1-xs);
+    }
 }
 
 h2 {
     font-family: var(--font-heading);
     font-size: var(--font-size-h2);
-    line-height: var(--line-height-heading);
+    line-height: var(--line-height-base);
     color: var(--gray-900);
     text-shadow: var(--shadow-md);
+}
+
+@media (max-width: 1200px) {
+    h2 {
+        font-size: var(--font-size-h2-m);
+    }
+}
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: var(--font-size-h2-s);
+    }
+}
+
+@media (max-width: 520px) {
+    h2 {
+        font-size: var(--font-size-h2-xs);
+    }
 }
 
 h3 {
@@ -155,6 +191,12 @@ h3 {
     line-height: var(--line-height-heading);
     color: var(--gray-900);
     text-shadow: var(--shadow-md);
+}
+
+@media (max-width: 400px) {
+    h3 {
+        font-size: var(--font-size-h3-small)
+    }
 }
 
 p {
@@ -166,10 +208,6 @@ p {
 }
 
 /* === Main content configs === */
-
-section {
-    margin: 0 10%;
-}
 
 hr {
     border: none;
@@ -189,13 +227,12 @@ header {
     justify-content: center;
     align-items: center;
     background-color: var(--gray-100);
-    z-index: 100;
 }
 
 .logo {
     width: 30px;
     height: 30px;
-    transition: .4s;
+    transition: var(--transition-base);
     color: var(--color-primary);
 }
 
@@ -218,9 +255,9 @@ header ul {
 
 .navbar a {
     font-family: var(--font-heading);
-    font-size: 22px;
+    font-size: var(--font-size-nav-a);
     font-weight: 500;
-    transition: .4s;
+    transition: var(--transition-base);
     color: var(--color-primary);
     text-shadow: var(--shadow-md);
 }
@@ -232,59 +269,122 @@ header ul {
     text-shadow: var(--text-shadow);
 }
 
+@media (max-width: 400px) {
+    .navbar a {
+        font-size: var(--font-size-nav-a-small)
+    }
+
+    .logo {
+        width: 25px;
+        height: 25px;
+    }
+
+    .navbar li {
+        margin-right: 1rem;
+    }
+}
+
 /* === Hero Section Configs === */
 
 /* Hero Configs */
 
 .hero-section {
-    height: 720px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr 50px repeat(5, 1fr);
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-headings {
+    text-align: center;
 
     h1 {
         margin-top: var(--space-lg);
-        grid-area: 1 / 2 / 1 / 13;
-        align-content: center;
     }
 }
 
+.hero-wrapper {
+    display: grid;
+    grid-template-columns: 10% 50% 1fr;
+    grid-template-rows:1fr;
+}
+
 .hero-content {
-    padding-top: 2rem;
-    grid-area: 2 / 2 / 4 / 7;
+    grid-area: 1 / 2 / 2 / 3;
+    padding: 2rem 0
 }
 
-.hero-img {
-    grid-area: 2 / 8 / 4 / 13;
-    max-width: 60%;
-    height: auto;
-    margin-left: 10%;
-    border: 2px solid var(--color-accent)
-}
-
-/* Contact Quicklinks Configs */
-
-.contact-quicklinks {
-    padding-top: 18rem;
+.quicklinks-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    grid-area: 4 / 2 / 5 / 7;
 }
 
 .quicklinks {
-    width: 30%;
+    width: 200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem;
+    margin: 2rem 0 1rem 0;
 }
+
+.hero-img-wrapper {
+    grid-area: 1 / 3 / 2 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 2rem 0
+}
+
+.hero-img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    /* Optional: set a max-height if needed */
+    /* max-height: 400px; */
+}
+
+@media (max-width: 1000px) {
+    .hero-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        padding: 2rem 5rem 0;
+    }
+
+    .hero-content {
+        grid-area: 1 / 1 / 1 / 1;
+        padding: 0;
+    }
+
+    .hero-img-wrapper {
+        grid-area: 2 / 1 / 2 / 1;
+    }
+}
+
+@media (max-width: 780px) {
+    .hero-wrapper {
+        padding: 2rem 2rem 0;
+    }
+
+    .hero-content {
+        grid-area: 1 / 1 / 1 / 1;
+        padding: 0;
+    }
+
+    .hero-img-wrapper {
+        grid-area: 2 / 1 / 2 / 1;
+    }
+}
+
+/* Contact Quicklinks Configs */
 
 .email-btn {
     border: 1px solid var(--color-primary);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     color: var(--color-white);
     background-color: var(--color-primary);
     width: 46px;
@@ -292,7 +392,7 @@ header ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .4s;
+    transition: var(--transition-base);
 }
 
 .email-btn svg {
@@ -303,7 +403,7 @@ header ul {
 
 .contact-logo {
     border: 1px solid var(--color-primary);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     color: var(--color-white);
     background-color: var(--color-primary);
     width: 46px;
@@ -311,7 +411,7 @@ header ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .4s;
+    transition: var(--transition-base);
 }
 
 .contact-logo svg {
@@ -373,6 +473,7 @@ header ul {
     height: 100%;
     border-radius: var(--radius-md);
     border: 2px solid var(--color-accent);
+    transition: var(--transition-fast);
 }
 
 .projects-grid span {
@@ -386,7 +487,6 @@ header ul {
 
 .projects-grid img:hover {
     transform: scale(1.05);
-    transition: transform 0.2s ease-in-out;
 }
 
 /* === Contact Section Configs === */
@@ -439,13 +539,13 @@ header ul {
     width: 50%;
     padding: var(--space-sm) var(--space-sm);
     margin-bottom: var(--space-sm);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
 }
 
 .contact-grid form textarea {
     padding: var(--space-sm) var(--space-sm);
     margin-bottom: var(--space-md);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     font-size: var(--font-size-sm);
 }
 
@@ -473,44 +573,15 @@ header ul {
     margin: 0 auto;
     padding: var(--space-md) var(--space-md);
     border: 1px solid var(--color-primary);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     color: var(--color-white);
     background-color: var(--color-primary);
+    transition: var(--transition-base);
 }
 
 .submit:hover {
     cursor: pointer;
     background-color: var(--color-secondary);
-}
-
-/* === Thank you Form Confirmation === */
-
-.thankyou {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-
-    a {
-        font-family: var(--font-base);
-        font-size: 20px;
-        color: var(--color-primary);
-        text-decoration: none;
-        margin-top: 2rem;
-        transition: color 0.4s;
-    }
-
-    a:hover {
-        color: var(--color-secondary);
-    }
-
-    img {
-        width: 200px;
-        height: 200px;
-        border-radius: var(--radius-circle);
-        border: 2px solid var(--color-accent);
-    }
 }
 
 /* === Footer === */
@@ -522,8 +593,20 @@ header ul {
 }
 
 .footer a {
+    color: var(--color-primary);
     margin-right: 2rem;
     text-shadow: var(--text-shadow);
+}
+
+@media (max-width: 400px) {
+    .footer a {
+        margin-right: 1rem;
+        font-size: var(--font-size-sm);
+    }
+
+    .footer p {
+        font-size: var(--font-size-sm);
+    }
 }
 
 /* === Thank you Form Confirmation === */
@@ -541,7 +624,7 @@ header ul {
         color: var(--color-primary);
         text-decoration: none;
         margin-top: 2rem;
-        transition: color 0.4s;
+        transition: var(--transition-base);
     }
 
     a:hover {
@@ -553,113 +636,5 @@ header ul {
         height: 200px;
         border-radius: var(--radius-circle);
         border: 2px solid var(--color-accent);
-    }
-}
-
-
-/* === Media Queries === */
-
-/* Screens up to 900px */
-
-@media screen and (max-width: 900px) {
-    /* Navbar */
-
-    header {
-        padding: 0 5%;
-    }
-
-    .navbar li {
-        margin-right: 1rem;
-    }
-    
-    .navbar a {
-        font-size: 20px;
-    }
-
-}
-
-/* Screens up to 750px */
-
-@media screen and (max-width: 750px) {
-    /* Navbar */
-
-    header {
-        padding: 0 5%;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-
-    .navbar li {
-        margin-right: 1rem;
-    }
-    
-    .navbar a {
-        font-size: 15px;
-    }
-
-    /* General Elements that need resizing */
-
-    h1 {
-        font-size: 54px;
-    }
-
-    /* Footer */
-
-    .footer p {
-        font-size: 15px;
-    }
-
-}
-
-/* Screens up to 600px */
-
-@media screen and (max-width: 600px) {
-    /* Navbar */
-
-    header {
-        padding: 0 0.5%;
-        justify-content: space-around;
-    }
-
-    .logo {
-        font-size: 16px;
-    }
-
-    .navbar li {
-        margin-right: 0.2rem;
-    }
-    
-    .navbar a {
-        font-size: 13px;
-    }
-
-    /* General Elements that need resizing */
-
-    h1 {
-        font-size: 36px;
-    }
-
-    h2 {
-        font-size: 25px;
-    }
-
-    h3 {
-        font-size: 36px;
-    }
-
-    p {
-        font-size: 15px;
-    }
-
-    li {
-        font-size: 15px;
-    }
-
-    .fa-brands, .fa-solid {
-        color: #1E90FF;
-        font-size: 55px;
-        margin-right: 2rem;
     }
 }
