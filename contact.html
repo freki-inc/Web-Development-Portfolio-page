@@ -40,7 +40,7 @@
             <label for="subject"><strong>Subject:</strong></label>
             <input class="contact-grid-input" type="text" id="subject" name="subject" placeholder="Type your subject here..." required maxlength="50">
             <label for="message"><strong>Message:</strong></label>
-            <textarea id="message" name="message" rows="8" cols="80" placeholder="Type your message here..." required maxlength="300"></textarea>
+            <textarea id="message" name="message" rows="8" cols="20" placeholder="Type your message here..." required maxlength="300"></textarea>
             <div class="consent-wrapper">
               <input class="consent-checkbox" id="consent" type="checkbox" name="consent" required>
               <label class="consent-label" for="consent">I agree to the <a href="https://www.termsfeed.com/live/7331e395-ec08-4e87-aa1c-0513a0a50794" target="_blank">Privacy Policy</a> and give consent to have my information stored for response purposes.</label>
@@ -51,8 +51,10 @@
             <input type="hidden" name="_next" value="https://www.willemwebdev.com/thank-you.html">
             <input class="submit" type="submit" value="Send Message">
           </form>
+          <div class="contact-img-wrapper">
+            <img title="Willem waiting for your message" src="./assets/images/contact-img.JPG" alt="Astronaut sitting on Moon drinking coffee">
+          </div>
         </div>
-        <img title="Willem waiting for your message" src="./assets/images/contact-img.JPG" alt="Astronaut sitting on Moon drinking coffee">
       </section>
       <hr/>
       <footer class="footer">

@@ -523,30 +523,22 @@ header ul {
 /* === Contact Section Configs === */
 
 .contact-section {
-    height: 720px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr 50px repeat(5, 1fr);
-    gap: 1rem;
-
-    h2 {
-        margin-top: var(--space-lg);
-        grid-area: 1 / 2 / 1 / 12;
-        align-content: center;
-    }
-
-    img {
-        grid-area: 2 / 7 / 5 / 12;
-        max-width: 65%;
-        height: auto;
-        margin-left: 30%;
-        border: 2px solid var(--color-accent)
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
+
+.contact-section h2 {
+    margin-top: var(--space-lg);
+    margin-left: 10%;
+}
+
 .contact-links {
+    margin-left: 10%;
+    padding-top: 1rem;
     width: 50%;
     display: flex;
-    grid-area: 2 / 2 / 2 / 7;
 }
 
 .contact-links a {
@@ -554,16 +546,22 @@ header ul {
 }
 
 .contact-grid {
-    grid-area: 3 / 2 / 5 / 7;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    padding: 2% 10%;
 }
 
 .contact-grid form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     font-family: var(--font-base);
     font-size: var(--font-size-lg);
     line-height: var(--line-height-base);
     text-shadow: var(--shadow-sm);
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .contact-grid-input {
@@ -581,22 +579,27 @@ header ul {
 }
 
 .consent-wrapper {
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.consent-checkbox {
+    width: 10px;
+    height: 10px;
+    margin: 0 var(--space-md);
 }
 
 .consent-label {
     font-size: var(--font-size-xs);
-    height: 2rem;
+    line-height: 10px;
 }
 
 .consent-label a {
     color: var(--color-primary);
     text-decoration: none;
-}
-
-.consent-checkbox {
-    width: 10%;
-    height: 10%
 }
 
 .submit {
@@ -613,6 +616,36 @@ header ul {
 .submit:hover {
     cursor: pointer;
     background-color: var(--color-secondary);
+}
+
+.contact-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+@media (max-width: 1000px) {
+    .contact-grid {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 2% 10%;
+    }
+
+    .contact-grid-input {
+        width: 75%;
+    }
+
 }
 
 /* === Footer === */
