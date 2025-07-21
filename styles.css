@@ -239,12 +239,6 @@ header {
     align-items: center;
 }
 
-@media (max-width: 400px) {
-    header {
-        height: 6vh;
-    }
-}
-
 .logo {
     width: 30px;
     height: 30px;
