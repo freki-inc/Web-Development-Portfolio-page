@@ -684,10 +684,6 @@ img {
 
 
 @media (max-width: 400px) {
-    .footer {
-        height: 6vh;
-    }
-
     .footer a {
         margin-right: 1rem;
         font-size: var(--font-size-sm);
