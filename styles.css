@@ -586,7 +586,7 @@ header ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--space-sm) 0 var(--space-md);
+    padding: var(--space-md) 0 var(--space-md);
 }
 
 .consent-checkbox {
@@ -626,7 +626,8 @@ header ul {
 .contact-img-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding: var(--space-lg) 0;
 }
 
 img {
@@ -643,7 +644,7 @@ img {
         display: grid;
         width: 100%;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr auto;
         padding: 2% 10%;
     }
 
@@ -653,10 +654,6 @@ img {
 
     .contact-grid-input {
         width: 75%;
-    }
-
-    .consent-wrapper {
-        margin: var(--space-lg) 0;
     }
 }
 
