@@ -474,7 +474,7 @@ header ul {
     }
 
     .projects-grid {
-        padding: 2% 5%;
+        padding: var(--space-lg) 5%;
     }
 }
 
