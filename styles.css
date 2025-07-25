@@ -253,6 +253,7 @@ header {
 header ul {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .navbar li {
@@ -677,6 +678,10 @@ img {
 
 .footer a:hover {
     color: var(--color-secondary)
+}
+
+.footer p {
+    margin: 0;
 }
 
 
