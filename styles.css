@@ -259,6 +259,10 @@ header ul {
 }
 
 .navbar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
     font-family: var(--font-heading);
     font-size: var(--font-size-nav-a);
     font-weight: 500;
@@ -275,10 +279,6 @@ header ul {
 }
 
 @media (max-width: 400px) {
-
-    .navbar a {
-        font-size: var(--font-size-nav-a-small)
-    }
 
     .navbar li {
         height: 25px;
