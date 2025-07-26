@@ -534,7 +534,7 @@ header ul {
 
 .contact-links {
     margin-left: 10%;
-    padding-top: 1rem;
+    padding-top: var(--space-md);
     width: 50%;
     display: flex;
 }
@@ -568,7 +568,7 @@ header ul {
     border-radius: var(--radius-md);
 }
 
-.contact-grid form label {
+.form-label {
     padding: var(--space-sm) 0;
 }
 
@@ -595,6 +595,7 @@ header ul {
 .consent-label {
     font-size: var(--font-size-xs);
     line-height: 10px;
+    padding-right: 1.5rem;
 }
 
 .consent-label a {
@@ -642,10 +643,11 @@ img {
         width: 100%;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
-        padding: 2% 10%;
+        padding: 0 10%;
     }
 
     .contact-links {
+        padding-top: var(--space-md);
         margin-bottom: var(--space-md);
     }
 
