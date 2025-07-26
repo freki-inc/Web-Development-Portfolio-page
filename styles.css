@@ -567,6 +567,11 @@ header ul {
     padding: var(--space-sm) 0;
 }
 
+input:focus, textarea:focus {
+    outline: none;
+    border: 2px solid var(--color-primary);
+}
+
 .contact-grid form textarea {
     padding: var(--space-sm) var(--space-sm);
     border-radius: var(--radius-md);
