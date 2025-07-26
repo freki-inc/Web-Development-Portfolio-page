@@ -232,8 +232,8 @@ header {
 }
 
 .logo {
-    width: 30px;
-    height: 30px;
+    width: 1.5rem;
+    height: 1.5rem;
     transition: var(--transition-base);
     color: var(--color-primary);
 }
@@ -278,11 +278,6 @@ header ul {
 
     .navbar a {
         font-size: var(--font-size-nav-a-small)
-    }
-
-    .logo {
-        width: 25px;
-        height: 25px;
     }
 
     .navbar li {
