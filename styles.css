@@ -8,7 +8,7 @@
   font-family: 'Righteous';
   font-style: normal;
   font-weight: 400;
-  src: url('..assets/fonts/righteous-v18-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('./assets/fonts/righteous-v18-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /** Font for body text **/
@@ -19,7 +19,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: url('..assets/fonts/inter-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('./assets/fonts/inter-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* inter-700 - latin */
@@ -28,7 +28,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  src: url('..assets/fonts/inter-v19-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('./assets/fonts/inter-v19-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* === CSS Custom Properties === */
@@ -226,7 +226,7 @@ hr {
 header {
     display: flex;
     width: 100%;
-    min-height: 10vh;
+    min-height: 7vh;
     justify-content: center;
     align-items: center;
 }
@@ -509,7 +509,7 @@ header ul {
 .projects-grid span {
     display: block;
     font-family: var(--font-base);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     text-shadow: var(--shadow-sm);
     width: 305px;
     padding: 0.5rem 0 0;
@@ -678,7 +678,7 @@ img {
 .footer {
     display: flex;
     width: 100%;
-    min-height: 10vh;
+    min-height: 7vh;
     justify-content: center;
     align-items: center;
 
@@ -720,24 +720,24 @@ img {
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
 
-    a {
-        font-family: var(--font-base);
-        font-size: 20px;
-        color: var(--color-primary);
-        text-decoration: none;
-        margin-top: 2rem;
-        transition: var(--transition-base);
-    }
+.thankyou a {
+    font-family: var(--font-base);
+    font-size: 20px;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: var(--transition-base);
+}
 
-    a:hover {
-        color: var(--color-secondary);
-    }
+.thankyou a:hover {
+    color: var(--color-secondary);
+}
 
-    img {
-        width: 200px;
-        height: 200px;
-        border-radius: var(--radius-circle);
-        border: 2px solid var(--color-accent);
-    }
+.thankyou img {
+    width: 200px;
+    height: 200px;
+    border-radius: var(--radius-circle);
+    border: 2px solid var(--color-accent);
 }
